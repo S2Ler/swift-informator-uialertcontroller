@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Informator",
+        "repositoryURL": "https://github.com/diejmon/Informator.git",
+        "state": {
+          "branch": "master",
+          "revision": "5622813dd615edca65031520d7e1e19394783753",
+          "version": null
+        }
+      },
+      {
+        "package": "SystemWindowController",
+        "repositoryURL": "https://github.com/diejmon/SystemWindowController.git",
+        "state": {
+          "branch": "master",
+          "revision": "488d639bb845984944ed8efe9e659aa297d1e274",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
