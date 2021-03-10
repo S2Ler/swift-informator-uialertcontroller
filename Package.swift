@@ -1,5 +1,4 @@
-// swift-tools-version:5.1
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+// swift-tools-version:5.3
 
 import PackageDescription
 
@@ -12,13 +11,18 @@ let package = Package(
   products: [
     .library(
       name: "Informator_UIAlertController",
-      targets: ["Informator_UIAlertController"]),
+      targets: ["Informator_UIAlertController"]
+    ),
   ],
   dependencies: [
-    .package(url: "https://github.com/diejmon/Informator.git",
-             .branch("master")),
-    .package(url: "https://github.com/diejmon/SystemWindowController.git",
-             .branch("master"))
+    .package(
+      url: "https://github.com/S2Ler/Informator.git",
+      .upToNextMajor(from: "0.1.0")
+    ),
+    .package(
+      url: "https://github.com/S2Ler/SystemWindowController.git",
+      .upToNextMajor(from: "0.7.0")
+    )
   ],
   targets: [
     .target(
@@ -26,7 +30,7 @@ let package = Package(
       dependencies: [
         "Informator",
         "SystemWindowController",
-      ]),
-    
-    ]
+      ]
+    ),
+  ]
 )
