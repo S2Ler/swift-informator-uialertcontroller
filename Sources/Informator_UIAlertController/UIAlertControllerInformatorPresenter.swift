@@ -1,11 +1,11 @@
 import UIKit
 import Informator
-import SystemWindowController
+import WindowController
 
 public final class UIAlertControllerInformatorPresenter: InformatorPresenter {
-  private let windowController: SystemWindowController
+  private let windowController: WindowController
 
-  public init(windowController: SystemWindowController) {
+  public init(windowController: WindowController) {
     self.windowController = windowController
   }
   public func execute(_ request: InformatorRequest, completion: @escaping () -> Void) {
@@ -22,7 +22,7 @@ public final class UIAlertControllerInformatorPresenter: InformatorPresenter {
         alertController.addAction(alertAction)
       }
 
-      self.windowController.show(alertController, at: 0)
+        self.windowController.show(alertController, at: .init(raw: 0))
     }
   }
 }

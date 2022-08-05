@@ -1,25 +1,23 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "Informator",
-        "repositoryURL": "https://github.com/S2Ler/Informator.git",
-        "state": {
-          "branch": null,
-          "revision": "8606da96cb544e89ca34ace782b3703768b35c81",
-          "version": "0.1.0"
-        }
-      },
-      {
-        "package": "SystemWindowController",
-        "repositoryURL": "https://github.com/S2Ler/SystemWindowController.git",
-        "state": {
-          "branch": null,
-          "revision": "f0d7d7835e4f9cb4bdab4e71860c694f62bba1a5",
-          "version": "0.7.0"
-        }
+  "pins" : [
+    {
+      "identity" : "swift-informator",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/S2Ler/swift-informator.git",
+      "state" : {
+        "revision" : "092e0634bb9607346ff5ad7ff7f39dbfd7737fca",
+        "version" : "0.2.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "swift-window-controller",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/S2Ler/swift-window-controller.git",
+      "state" : {
+        "revision" : "7808daae2427469e81440fdf5f182548fd0ad2eb",
+        "version" : "0.8.0"
+      }
+    }
+  ],
+  "version" : 2
 }
