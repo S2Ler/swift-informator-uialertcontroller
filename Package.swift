@@ -18,7 +18,7 @@ let package = Package(
   dependencies: [
     .package(
       url: "https://github.com/S2Ler/swift-informator.git",
-      .upToNextMinor(from: "0.2.0")
+      branch: "feature/async-actor"
     ),
     .package(
       url: "https://github.com/S2Ler/swift-window-controller.git",

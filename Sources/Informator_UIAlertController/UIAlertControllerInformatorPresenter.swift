@@ -8,22 +8,27 @@ public final class UIAlertControllerInformatorPresenter: InformatorPresenter {
   public init(windowController: WindowController) {
     self.windowController = windowController
   }
-  public func execute(_ request: InformatorRequest, completion: @escaping () -> Void) {
-    DispatchQueue.main.async {
-      let alertController = UIAlertController(title: request.message.messageTitle,
-                                              message: request.message.messageBody,
-                                              preferredStyle: .alert)
 
-      for action in request.actions {
-        let alertAction = UIAlertAction(title: action.title, style: action.style.alertActionStyle, handler: { alertAction in
-          action.invoke()
-          completion()
-        })
-        alertController.addAction(alertAction)
-      }
+  public func execute(_ request: InformatorRequest) async {
+    await Task { @MainActor in
+      await withCheckedContinuation { continuation in
+        let alertController = UIAlertController(title: request.message.messageTitle,
+                                                message: request.message.messageBody,
+                                                preferredStyle: .alert)
+
+        for action in request.actions {
+          let alertAction = UIAlertAction(title: action.title, style: action.style.alertActionStyle, handler: { alertAction in
+              Task {
+                  await action.invoke()
+                  continuation.resume()
+              }
+          })
+          alertController.addAction(alertAction)
+        }
 
         self.windowController.show(alertController, at: .init(raw: 0))
-    }
+      }
+    }.value
   }
 }
 
